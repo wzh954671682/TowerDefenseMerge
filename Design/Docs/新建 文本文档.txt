@@ -1,0 +1,6 @@
+git config --global user.name "wzh954671682"
+git config --global user.email "wzh954671682@gmail.com"
+
+
+https://github.com/wzh954671682/TowerDefenseMerge.git
+git@github.com:wzh954671682/TowerDefenseMerge.git
