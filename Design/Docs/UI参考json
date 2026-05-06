@@ -1,0 +1,658 @@
+[
+  {
+    "page_id": "hero_selection_page",
+    "page_title": "英雄列表",
+    "layout_type": "vertical_scroll_with_fixed_nav",
+    "header": {
+      "type": "top_bar",
+      "title": "英雄",
+      "resources": [
+        { "type": "gold", "value": 6199 },
+        { "type": "gem", "value": 2636 }
+      ]
+    },
+    "content_area": {
+      "sections": [
+        {
+          "section_id": "deployed_heroes",
+          "layout": "horizontal_list",
+          "items": [
+            { "hero_name": "dark_witch", "level": 113, "element": "dark", "rarity": "epic", "star_count": 1, "status": ["upgrade_ready"] }
+          ]
+        },
+        {
+          "section_id": "undeployed_heroes",
+          "layout": "grid",
+          "columns": 5,
+          "items": [
+            { "hero_name": "ice_queen", "level": 1, "element": "ice", "rarity": "legendary", "star_count": 2, "status": [] },
+            { "___more_items___": "其余网格英雄数据结构同上" }
+          ]
+        }
+      ]
+    },
+    "fixed_bottom_controls": {
+      "filter_bar": ["all", "ice", "fire", "lightning", "wind", "dark"],
+      "nav_bar": { "active_tab": "hero", "has_red_dot": ["hero", "battle", "castle", "shop"] }
+    }
+  },
+  {
+    "page_id": "hero_detail_page",
+    "page_title": "英雄详情",
+    "layout_type": "modal_with_3d_stage",
+    "header": {
+      "hero_name": "恶魔之子",
+      "element": "fire",
+      "class": "warrior",
+      "star_level": { "count": 4, "type": "red_moon" }
+    },
+    "3d_stage": {
+      "model_id": "demon_son_model",
+      "power_value": "122K",
+      "bond_active": true
+    },
+    "content_area": {
+      "tabs": ["升级", "升星", "装备", "符文"],
+      "active_tab_content": {
+        "level": 120,
+        "stats": { "atk": "21K", "hp": "40K", "def": 9436 },
+        "skills": [
+          { "skill_id": "s1", "level": 1 },
+          { "skill_id": "s2", "level": 7 },
+          { "skill_id": "s3", "level": 2 }
+        ],
+        "upgrade_costs": [
+          { "type": "exp", "current": "549K", "required": "125K", "is_enough": true },
+          { "type": "purple_dust", "current": "22K", "required": "25K", "is_enough": false }
+        ],
+        "action_button": { "text": "升阶", "color": "yellow", "state": "normal" }
+      }
+    }
+  },
+  {
+    "page_id": "main_menu_page",
+    "page_title": "主界面",
+    "layout_type": "fullscreen_scene_with_hud",
+    "hud": {
+      "top_left": { "avatar_id": "1000000", "level": 50, "power": "396K" },
+      "top_right": { "stamina": "30/65", "gold": 6199, "gem": 2636 },
+      "left_sidebar": ["first_recharge", "newbie_gift", "core_event", "battle_pass", "chain_pack"],
+      "right_sidebar": ["bag", "quests", "mail", "monster_index"],
+      "center_stage": {
+        "chapter_title": "106.晴空遗迹",
+        "wave_progress": "0/20",
+        "models_displayed": ["demon", "angel", "witch", "golem"]
+      },
+      "bottom_actions": {
+        "icons": ["chapter_chest", "patrol", "star_challenge"],
+        "main_button": { "text": "开始战斗", "cost": { "type": "stamina", "value": 5 } },
+        "side_button": { "text": "每日挑战", "has_red_dot": true }
+      }
+    }
+  },
+  {
+    "page_id": "guild_info_popup",
+    "page_title": "公会信息",
+    "layout_type": "standard_popup",
+    "popup_box": {
+      "header": { "title": "公会信息", "has_info_icon": true, "has_close_btn": true },
+      "guild_card": {
+        "badge_icon": "crown_red",
+        "power": "20M",
+        "name": "天星城",
+        "members": "38/38",
+        "level": 5,
+        "id": "20110",
+        "exp_bar": { "current": 166200, "max": 240000 }
+      },
+      "declaration_box": "拉满贡献，每日讨伐三次...",
+      "member_list": [
+        { "avatar": "witch", "role": "成员", "name": "土豆片炒肉", "power": "396K", "contribution": 1060, "status": "在线" },
+        { "___more_items___": "其余公会成员" }
+      ],
+      "bottom_buttons": [
+        { "text": "日志", "color": "yellow" },
+        { "text": "公会捐献", "color": "grey" },
+        { "text": "公会管理", "color": "blue" }
+      ]
+    }
+  },
+  {
+    "page_id": "leaderboard_page",
+    "page_title": "排行榜",
+    "layout_type": "popup_with_tabs",
+    "top_podium": {
+      "rank_2": { "name": "天星城", "score": "64B", "badge": "silver" },
+      "rank_1": { "name": "上海滩", "score": "115B", "badge": "gold" },
+      "rank_3": { "name": "永恒之光", "score": "46B", "badge": "bronze" }
+    },
+    "list_area": [
+      { "rank": 1, "badge": "crown_gold", "name": "上海滩", "score": "115B", "bg_color": "white" },
+      { "rank": 2, "badge": "crown_silver", "name": "天星城", "score": "64B", "bg_color": "light_grey" },
+      { "___more_items___": "其余排名条目" }
+    ],
+    "fixed_bottom": {
+      "my_rank_bar": { "rank": 2, "name": "天星城", "score": "64B", "highlight": true },
+      "tabs": ["公会排行", "排行奖励", "个人排行"]
+    }
+  },
+  {
+    "page_id": "rule_info_popup",
+    "page_title": "规则说明",
+    "layout_type": "simple_text_popup",
+    "components": {
+      "ribbon_title": "公会讨伐",
+      "close_button": true,
+      "text_content": [
+        { "type": "bullet", "text": "每人每天拥有「3次挑战机会」", "highlight": ["3次挑战机会"] },
+        { "type": "bullet", "text": "每个英雄和宝物每天限制使用2次" },
+        { "___more_items___": "更多规则文本行" }
+      ]
+    }
+  },
+  {
+    "page_id": "relic_page",
+    "page_title": "宝物列表",
+    "layout_type": "split_view",
+    "top_half": {
+      "stage_type": "circular_rune_array",
+      "slots": [
+        { "index": 0, "item": "fire_stone", "level": 2 },
+        { "___more_items___": "共6个阵法槽位" }
+      ],
+      "total_stats_bar": { "atk": "30%", "hp": "30%", "def": "30%" }
+    },
+    "bottom_half": {
+      "controls": {
+        "dropdown": "全部",
+        "action_buy": { "text": "购买", "color": "blue" },
+        "action_merge": { "text": "合成", "color": "yellow", "has_red_dot": true }
+      },
+      "grid_inventory": [
+        { "icon": "green_book", "element": "wind", "level": 2, "is_equipped": false, "rarity": "purple" },
+        { "icon": "red_gem", "element": "fire", "level": 2, "is_equipped": true, "rarity": "purple" },
+        { "___more_items___": "背包内更多宝物" }
+      ]
+    }
+  },
+  {
+    "page_id": "shop_page",
+    "page_title": "商城",
+    "layout_type": "grid_with_banner",
+    "banner": "礼包商城主题画",
+    "grid_items": [
+      {
+        "title": "免费礼包",
+        "contents": [{ "icon": "chest_purple", "qty": 1 }],
+        "limit": "0/3",
+        "price": "已售罄",
+        "state": "disabled",
+        "badge": null
+      },
+      {
+        "title": "英雄礼包",
+        "contents": [{ "icon": "hero_ticket", "qty": 10 }, { "icon": "gem", "qty": 125 }],
+        "limit": "1/1",
+        "price": "12元",
+        "state": "normal",
+        "badge": "必买"
+      },
+      { "___more_items___": "更多礼包卡片" }
+    ],
+    "bottom_tabs": ["宝物鉴定", "黑市商店", "礼包商城"]
+  },
+  {
+    "page_id": "victory_settlement_popup",
+    "page_title": "战斗胜利",
+    "layout_type": "modal_overlay",
+    "central_badge": {
+      "type": "victory_wings_swords",
+      "ribbon_text": "胜利",
+      "fx": "sparkles"
+    },
+    "rewards_section": {
+      "title": "奖励统计",
+      "items": [
+        { "icon": "gold_coin", "value": 4628, "bg": "green" },
+        { "icon": "blue_stone", "value": 1896, "bg": "blue" },
+        { "icon": "purple_dust", "value": 90, "bg": "purple" }
+      ]
+    },
+    "stats_list": [
+      { "label": "第24关" },
+      { "label": "生存波数：20" },
+      { "label": "最高波数：20" }
+    ],
+    "action": { "text": "确定", "color": "green" }
+  },
+  {
+    "page_id": "defeat_settlement_popup",
+    "page_title": "战斗失败",
+    "layout_type": "modal_overlay",
+    "central_badge": {
+      "type": "defeat_broken_shield_skull",
+      "ribbon_text": "失败"
+    },
+    "rewards_section": { "items": [{ "icon": "gold_coin", "value": 10 }] },
+    "upgrade_channels": {
+      "title": "提升渠道",
+      "list": [
+        { "icon": "cards", "text": "英雄招募", "btn_icon": "green_arrow" },
+        { "icon": "helmet", "text": "英雄培养", "btn_icon": "green_arrow" },
+        { "icon": "star_medal", "text": "助战养成", "btn_icon": "green_arrow" }
+      ]
+    },
+    "actions": [
+      { "text": "再次挑战", "color": "blue" },
+      { "text": "确定", "color": "green" }
+    ]
+  },
+  {
+    "page_id": "reward_claim_popup",
+    "page_title": "获取奖励",
+    "layout_type": "modal_overlay_grid",
+    "title_text": "获得奖励",
+    "items_grid": [
+      { "icon": "gold_coin", "qty": "16K", "bg": "green" },
+      { "icon": "blue_stone", "qty": "23K", "bg": "blue" },
+      { "icon": "purple_dust", "qty": "1853", "bg": "purple" },
+      { "icon": "grey_ore", "qty": "377", "bg": "purple" },
+      { "icon": "gem", "qty": "50", "bg": "yellow" },
+      { "icon": "exp_star", "qty": "788", "bg": "green" },
+      { "___more_items___": "装备与碎片图标" }
+    ],
+    "bg_fx": "treasure_chest_glow",
+    "hint_text": "点击空白处以关闭"
+  },
+  {
+    "page_id": "battle_skill_select",
+    "page_title": "战斗中词条选择",
+    "layout_type": "fullscreen_overlay",
+    "title": "升级了！",
+    "title_ribbon": "green",
+    "subtitle": "选择1个英雄进行突破",
+    "cards_container": [
+      { "hero_avatar": "ice_mage", "skill_icon": "ice_spike", "skill_name": "冰法师", "bg_color": "yellow" },
+      { "hero_avatar": "ice_witch", "skill_icon": "ice_storm", "skill_name": "冰女巫", "bg_color": "yellow" },
+      { "hero_avatar": "ice_demon", "skill_icon": "ice_shield", "skill_name": "冰魔", "bg_color": "red" },
+      { "hero_avatar": "night_knight", "skill_icon": "pierce", "skill_name": "夜幕爵士", "bg_color": "red" },
+      { "hero_avatar": "ice_queen", "skill_icon": "blizzard", "skill_name": "冰女王", "bg_color": "red" }
+    ],
+    "status_bar": "已选择0/1"
+  },
+  {
+    "page_id": "battle_hud_normal",
+    "page_title": "战斗界面",
+    "layout_type": "combat_hud",
+    "top_bar": {
+      "level_name": "硕鼠金洞·8",
+      "enemy_level": "1级",
+      "exp_bar": { "progress": 0, "multiplier": "x2.1倍" },
+      "resources": [{ "type": "gold", "val": 0 }, { "type": "stone", "val": 0 }],
+      "controls": ["x2_speed", "pause"]
+    },
+    "center_area": { "type": "isometric_3d_battlefield", "has_damage_text": true },
+    "bottom_bar": {
+      "base_hp": "2/5",
+      "skill_slots": [
+        { "hero": "night_knight", "skill_icon": "pierce", "level": 3, "rarity": "green" },
+        { "hero": "ice_demon", "skill_icon": "ice_shield", "level": 2, "rarity": "blue" },
+        { "hero": "ice_witch", "skill_icon": "ice_storm", "level": 6, "rarity": "purple", "selected": true },
+        { "hero": "ice_queen", "skill_icon": "blizzard", "level": 3, "rarity": "blue" },
+        { "hero": "ice_mage", "skill_icon": "ice_spike", "level": 1, "rarity": "grey" }
+      ]
+    }
+  },
+  {
+    "page_id": "battle_hazard_warning",
+    "page_title": "预警界面",
+    "layout_type": "combat_hud_with_overlay",
+    "overlay_fx": {
+      "type": "hazard_stripes",
+      "colors": ["red", "black"],
+      "icon": "giant_red_triangle_exclamation",
+      "text": "一大波敌人来袭",
+      "animation": "flashing"
+    }
+  },
+  {
+    "page_id": "dungeon_entrance",
+    "page_title": "蛮猪猎场",
+    "layout_type": "popup",
+    "banner": {
+      "image": "chest_and_heroes",
+      "timer": "16时33分",
+      "difficulty_badge": "难度1"
+    },
+    "special_events": [
+      { "icon": "ice_resist_up", "text": "所有怪物冰抗性提升10%" },
+      { "icon": "atk_speed_down", "text": "所有英雄攻速降低10%" }
+    ],
+    "controls": {
+      "requirement_check": "通关主线第20章 ✔",
+      "btn_increase_diff": { "text": "提升难度", "color": "yellow", "has_red_dot": true }
+    },
+    "reward_preview": {
+      "text": "难度越高，可获得奖励越丰厚！",
+      "chests": [
+        { "points": 0, "state": "current", "icon": "star_empty" },
+        { "points": 100, "state": "locked", "icon": "chest_gold" },
+        { "___more_items___": "更多进度宝箱" }
+      ]
+    },
+    "action_button": { "text": "挑战", "color": "blue", "has_red_dot": true }
+  },
+  {
+    "page_id": "battle_pass_page",
+    "page_title": "热闹集市(战令)",
+    "layout_type": "dual_column_timeline",
+    "header": {
+      "title": "热闹集市",
+      "subtitle": "活动期间登录领取奖励",
+      "timer": "4天16时",
+      "progress": { "icon": "star", "value": 42 },
+      "purchase_banner": { "price": "68元", "value_tag": "超值1120%" }
+    },
+    "timeline": {
+      "column_left": { "title": "免费奖励" },
+      "column_right": { "title": "基金奖励", "is_premium": true },
+      "rows": [
+        {
+          "node": "第1天",
+          "free_reward": { "icon": "star_token", "qty": 1, "state": "claimable", "red_dot": true },
+          "premium_reward": { "icon": "star_token", "qty": 10, "state": "locked" }
+        },
+        { "___more_items___": "第2天至第7天节点" }
+      ]
+    }
+  },
+  {
+    "page_id": "purchase_confirm_popup",
+    "page_title": "购买确认",
+    "layout_type": "small_alert_popup",
+    "box": {
+      "title": "确认购买",
+      "close_btn": true,
+      "text": "购买后可得下列物品",
+      "items": [
+        { "icon": "gem", "qty": 680, "bg": "yellow" },
+        { "icon": "vip_exp", "qty": 680, "bg": "white" }
+      ],
+      "buttons": [
+        { "text": "取消", "color": "blue" },
+        { "text": "确认", "color": "yellow" }
+      ]
+    }
+  },
+  {
+    "page_id": "gacha_rates_popup",
+    "page_title": "奖励预览(概率)",
+    "layout_type": "list_popup",
+    "header": { "title": "奖励预览", "close_btn": true },
+    "list_items": [
+      {
+        "title": "仲夏明珠",
+        "rate": "2.52%",
+        "icon": "pearl",
+        "qty": 3,
+        "bg_color": "light_grey"
+      },
+      {
+        "title": "随机神话英雄礼包",
+        "rate": "0.49%",
+        "icon": "chest_red",
+        "qty": 1,
+        "bg_color": "white"
+      },
+      { "___more_items___": "更多概率说明条目" }
+    ]
+  },
+  {
+    "page_id": "quest_panel",
+    "page_title": "冲刺任务",
+    "layout_type": "vertical_list",
+    "banner": "英雄立绘拼图与标题",
+    "timer_bar": "距离下次任务刷新16时24分",
+    "tasks": [
+      {
+        "title": "每日登录",
+        "progress": "(1/1)",
+        "rewards": [{ "icon": "purple_ticket", "qty": 1 }],
+        "button": { "text": "领取", "color": "green", "red_dot": true }
+      },
+      {
+        "title": "鉴定稀有宝物原石10次",
+        "progress": "(0/10)",
+        "rewards": [{ "icon": "purple_ticket", "qty": 2 }, { "icon": "hammer", "qty": 2 }],
+        "button": { "text": "前往", "color": "blue" }
+      },
+      { "___more_items___": "更多进阶任务" }
+    ],
+    "bottom_tabs": ["寻宝转盘", "冲刺任务", "冲刺礼包"]
+  },
+  {
+    "page_id": "bulk_purchase_popup",
+    "page_title": "批量购买",
+    "layout_type": "small_alert_popup",
+    "box": {
+      "title": "购买",
+      "close_btn": true,
+      "item_focus": { "icon": "scroll", "name": "英雄招募券", "qty": 1, "desc": "用于召唤英雄..." },
+      "slider_control": {
+        "min": 1,
+        "max": 18,
+        "current": 1,
+        "btn_minus": true,
+        "btn_plus": true,
+        "btn_max": true
+      },
+      "cost_display": { "icon": "gem", "current_owned": 3835, "cost": 210 },
+      "buttons": [
+        { "text": "取消", "color": "blue" },
+        { "text": "购买", "color": "yellow" }
+      ]
+    }
+  },
+  {
+    "page_id": "diamond_recharge_page",
+    "page_title": "钻石充值",
+    "layout_type": "grid",
+    "banner": "吉祥物猫与小男孩",
+    "grid_items": [
+      { "amount": 60, "icon": "gem_pile_small", "bonus_text": "首充附赠+60", "price": "6元" },
+      { "amount": 320, "icon": "gem_pile_medium", "bonus_text": "首充附赠+320", "price": "30元" },
+      { "amount": 8100, "icon": "gem_chest", "bonus_text": "首充附赠+8100", "price": "648元" },
+      { "___more_items___": "其余档位" }
+    ]
+  },
+  {
+    "page_id": "gacha_altar_page",
+    "page_title": "抽取角色",
+    "layout_type": "fullscreen_3d_stage",
+    "hud": { "resources": [{ "icon": "ticket", "val": 9 }, { "icon": "gem", "val": 3810 }] },
+    "stage": {
+      "title": "概率UP ⬆",
+      "hero_name": "炎炎先驱·基洛尼克",
+      "model": "golden_mech_hero",
+      "bg_fx": "fire_flames"
+    },
+    "controls": {
+      "pity_text": "再招募20次必得神话英雄",
+      "btn_single": { "cost_icon": "ticket", "cost_val": 1, "text": "招募一次" },
+      "btn_ten": { "cost_icon": "gem", "cost_val": 3000, "text": "招募十次" }
+    },
+    "bottom_carousel": ["异界招募", "UP招募", "勇者招募"]
+  },
+  {
+    "page_id": "new_hero_unlock",
+    "page_title": "获得新角色",
+    "layout_type": "fullscreen_focus",
+    "bg_fx": "yellow_starburst_glow",
+    "title": "获得新英雄！",
+    "hero_display": {
+      "class_tag": "游侠",
+      "model": "hunter_girl",
+      "new_tag": "新！",
+      "bond_icon": "green_orb"
+    },
+    "info_card": {
+      "name_ribbon": "猎魔人",
+      "element": "wind",
+      "stats": { "atk": 345, "hp": 627, "def": 103 },
+      "skills": ["wind_shot_1", "wind_shot_2", "wind_buff"]
+    }
+  },
+  {
+    "page_id": "weapon_upgrade_popup",
+    "page_title": "专属武器",
+    "layout_type": "popup",
+    "box": {
+      "header": { "title": "专属武器", "close_btn": true },
+      "weapon_card": {
+        "icon": "blue_diamond_sword",
+        "name": "永冻神谕+0",
+        "stats": { "hp": "0%", "def": "0%", "atk": "0%" }
+      },
+      "effects_list": {
+        "title": "专属武器效果",
+        "items": [
+          { "state": "locked", "text": "【激活解锁】战斗内出现技能... (技能伤害随战斗内角色等级提升)", "highlight": true },
+          { "state": "locked", "text": "【+10解锁】凛冬之息伤害增加..." },
+          { "___more_items___": "后续解锁等级条目" }
+        ]
+      },
+      "action_btn": { "text": "激活", "color": "yellow", "red_dot": true }
+    }
+  },
+  {
+    "page_id": "equipment_detail_popup",
+    "page_title": "装备详情",
+    "layout_type": "small_popup",
+    "box": {
+      "header": { "title": "装备详情", "close_btn": true },
+      "item_info": {
+        "icon": "wooden_sword",
+        "level": 19,
+        "rarity": "green",
+        "name": "训练木剑",
+        "slot": "武器",
+        "score": 76
+      },
+      "stats": {
+        "base": [{ "name": "攻击", "val": 17, "up": "+90" }],
+        "additional": [{ "name": "防御", "val": 6, "up": "+8" }]
+      },
+      "buttons": [
+        { "text": "交换", "color": "blue" },
+        { "text": "养成", "color": "yellow", "red_dot": true }
+      ]
+    }
+  },
+  {
+    "page_id": "hero_skin_page",
+    "page_title": "角色皮肤",
+    "layout_type": "popup",
+    "box": {
+      "header": { "title": "皮肤", "close_btn": true },
+      "preview_area": {
+        "model": "ice_queen_skin",
+        "name": "冰女王",
+        "element": "ice",
+        "rarity_tag": "传说",
+        "skill_badge": "穿戴获得技能"
+      },
+      "buff_text": "获得皮肤后所有上阵英雄获得属性：攻击+2%...",
+      "carousel": {
+        "items": [
+          { "icon": "skin_default", "name": "冰女王", "state": "equipped" },
+          { "icon": "skin_summer", "name": "寒潮沙语", "state": "locked", "is_selected": true },
+          { "icon": "empty_slot", "state": "locked" }
+        ]
+      },
+      "status_text": "限时活动获得"
+    }
+  },
+  {
+    "page_id": "talent_tree_page",
+    "page_title": "天赋",
+    "layout_type": "grid_with_bottom_action",
+    "header": { "title": "天赋", "resource": { "type": "gold", "val": "179K" } },
+    "grid": [
+      { "icon": "fist_blue", "name": "战意", "level": "Lv.8", "rarity": "blue" },
+      { "icon": "heart", "name": "恒久", "level": "Lv.8", "rarity": "blue" },
+      { "icon": "sword_yellow", "name": "灾厄之击", "level": "Lv.3", "rarity": "purple" },
+      { "icon": "golden_fist", "name": "战斗嗜血", "level": "Lv.1", "rarity": "gold", "fx": "glow" },
+      { "___more_items___": "共16格天赋卡" }
+    ],
+    "bottom_action": {
+      "btn": { "text": "抽卡", "cost_icon": "gold", "cost_val": 17000, "color": "yellow", "red_dot": true }
+    }
+  },
+  {
+    "page_id": "inventory_page",
+    "page_title": "背包",
+    "layout_type": "popup_grid",
+    "box": {
+      "header": { "title": "背包", "close_btn": true },
+      "grid_bg": "white",
+      "items": [
+        { "icon": "horn_necklace", "rarity": "green", "star": true },
+        { "icon": "viking_helmet", "rarity": "green", "star": true },
+        { "icon": "leather_boots", "rarity": "green", "star": true },
+        { "icon": "wooden_ring", "rarity": "green", "star": true },
+        { "___more_items___": "大量装备图标占满网格" }
+      ],
+      "tabs": ["道具", "碎片", "装备", "宝物", "符文"],
+      "active_tab": "装备"
+    }
+  },
+  {
+    "page_id": "daily_activity_page",
+    "page_title": "日常任务",
+    "layout_type": "popup_list",
+    "box": {
+      "header": { "title": "日常任务", "close_btn": true },
+      "progress_section": [
+        { "type": "周活跃", "level": 55, "nodes": [120, 240, 360, 480, 600] },
+        { "type": "日活跃", "level": 55, "nodes": [20, 40, 60, 80, 100], "highlight_node": 40 }
+      ],
+      "task_list": [
+        { "points": 15, "text": "黑市购买1次", "progress": "1/1", "btn": { "text": "完成", "color": "green" } },
+        { "points": 10, "text": "购买1次体力", "progress": "0/1", "btn": { "text": "前往", "color": "yellow" } },
+        { "points": 10, "text": "登录1次游戏", "progress": "1/1", "btn": { "icon": "check_mark", "state": "disabled" } },
+        { "___more_items___": "更多任务条目" }
+      ],
+      "bottom_tabs": ["日常", "成就"]
+    }
+  },
+  {
+    "page_id": "settings_page",
+    "page_title": "设置",
+    "layout_type": "popup_list",
+    "box": {
+      "header": { "title": "设置", "close_btn": true },
+      "player_card": {
+        "avatar": "hero_avatar",
+        "name": "贝吉塔王子",
+        "edit_icon": true,
+        "guild": "龙骨村",
+        "power": "48K",
+        "chapter": 25
+      },
+      "controls_list": [
+        { "icon": "id_card", "text": "用户序号: 10654030", "action": { "type": "button", "text": "复制", "color": "blue" } },
+        { "icon": "music_note", "text": "音乐", "action": { "type": "toggle", "state": "on", "color": "green" } },
+        { "icon": "speaker", "text": "音效", "action": { "type": "toggle", "state": "on", "color": "green" } },
+        { "icon": "vibrate", "text": "震动", "action": { "type": "toggle", "state": "on", "color": "green" } },
+        { "icon": "camera", "text": "质量", "action": { "type": "button", "text": "高", "color": "blue" } }
+      ],
+      "bottom_grid_buttons": [
+        { "icon": "chat", "text": "客服" },
+        { "icon": "wifi", "text": "更换服务器" },
+        { "icon": "user", "text": "用户中心" },
+        { "icon": "gift", "text": "兑换码" }
+      ],
+      "footer_links": ["公告", "用户协议与隐私条款", "个人信息清单"]
+    }
+  }
+]
